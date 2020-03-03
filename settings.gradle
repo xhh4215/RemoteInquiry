@@ -1,0 +1,2 @@
+include ':app', ':common', ':dhlibrary', ':hklibrary', ':lang'
+rootProject.name='RemoteInquiryProject'
