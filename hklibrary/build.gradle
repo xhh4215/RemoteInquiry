@@ -30,11 +30,20 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
+    api fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestApi 'androidx.test.ext:junit:1.1.0'
+    androidTestApi 'androidx.test.espresso:espresso-core:3.1.1'
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "androidx.appcompat:appcompat:$rootProject.ext.appcompatVersion"
+    api "androidx.core:core-ktx:$rootProject.ext.androidxktxVersion"
+    //rxjava异步的事件处理框架
+    api "io.reactivex.rxjava2:rxjava:$rootProject.ext.RxjavaVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.ext.RxandroidVersion"
+    //recycleview 列表显示的框架的添加
+    api "androidx.recyclerview:recyclerview:$rootProject.ext.recycleViewVersion"
+    //慕课网老师的两个UI包的依赖的添加
+    api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    api "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+
 }
