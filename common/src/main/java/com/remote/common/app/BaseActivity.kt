@@ -5,34 +5,49 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
+
+    /***
+     * activity初次创建调用的方法
+     */
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initWindow()
+       if( initArgs(intent.extras)){
+           setContentView(getLayoutId())
+           initWidget()
+           initData()
+       }else{
+           finish()
+       }
+    }
     /***
      * 初始化窗口的方法
      */
-    protected fun initWindow() {
+    open  fun initWindow() {
 
     }
 
     /***
      * 初始化别的activity传递的信息的方法
      */
-    protected fun initArgs(bundle: Bundle) = true
+    open fun initArgs(bundle: Bundle?) = true
 
     /***
      * 获取布局id的方法
      */
-    protected abstract fun getLayoutId()
+    open abstract fun getLayoutId():Int
 
     /***
      * 初始化控件的方法
      */
-    protected fun initWidget() {
+    open  fun initWidget() {
 
     }
 
     /***
      * 初始化数据的方法
      */
-    protected fun initData() {
+    open  fun initData() {
 
     }
 

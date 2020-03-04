@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
 
+    android:layout_height="match_parent"
+    tools:context=".activitys.MainActivity">
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/len_20"
+        android:elevation="12dp"
+        android:textSize="24sp"
+        android:background="@color/blue_900"
+        android:gravity="center"
+        android:text="XXXX正在提审"
+        android:paddingBottom="@dimen/len_8"
+        />
+
+
+<LinearLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:gravity="center"
+
+    android:layout_weight="1">
+    <FrameLayout
+        android:id="@+id/ts_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="12dp"
+        android:elevation="@dimen/len_12"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="12dp"
+        >
+    </FrameLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:text="笔录信息"
+        android:textColor="@color/black"
+        android:layout_weight="1"
+        android:elevation="@dimen/len_12"
+        android:textSize="@dimen/font_24"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_marginEnd="@dimen/len_64"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/len_20"
+        android:layout_marginBottom="@dimen/len_20"
+        />
+</LinearLayout>
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:textSize="18sp"
+      android:paddingTop="@dimen/len_20"
+       android:elevation="@dimen/len_12"
+       android:textColor="@color/white"
+       android:background="@color/blue_900"
+       android:paddingBottom="@dimen/len_8"
+       android:text="技术支持：山东道图信息科技有限公司"/>
+</LinearLayout>
